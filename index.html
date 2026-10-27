@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的自我介紹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy-900: #0a1628;
+      --navy-800: #0f2140;
+      --navy-700: #16305a;
+      --gold: #c9a961;
+      --gold-light: #e6cf8f;
+      --text: #e8ecf3;
+      --text-muted: #9aa7bd;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 15%, rgba(201, 169, 97, 0.08), transparent 40%),
+        linear-gradient(160deg, var(--navy-900) 0%, var(--navy-800) 55%, var(--navy-700) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      background: linear-gradient(180deg, rgba(22, 48, 90, 0.55), rgba(10, 22, 40, 0.75));
+      border: 1px solid rgba(201, 169, 97, 0.35);
+      border-radius: 6px;
+      padding: 56px 44px 48px;
+      text-align: center;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+      animation: fadeUp 0.7s ease-out;
+    }
+
+    /* 頂部金色細線 */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--navy-800);
+      border: 2px solid var(--gold);
+      outline: 1px solid rgba(201, 169, 97, 0.35);
+      outline-offset: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Noto Serif TC", serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      padding-bottom: 28px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .subtitle::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .hobbies li {
+      padding: 8px 18px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(201, 169, 97, 0.4);
+      color: var(--text);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .hobbies li:hover {
+      background: rgba(201, 169, 97, 0.12);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    blockquote {
+      padding: 22px 28px;
+      border-left: 3px solid var(--gold);
+      background: rgba(255, 255, 255, 0.04);
+      text-align: left;
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 44px 24px 36px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="avatar">小</div>
+    <h1>王小明</h1>
+    <p class="subtitle">喜歡學習新事物的探索者</p>
+
+    <h2 class="section-title">我的興趣</h2>
+    <ul class="hobbies">
+      <li>📚 閱讀</li>
+      <li>🎵 音樂</li>
+      <li>✈️ 旅行</li>
+      <li>💻 寫程式</li>
+      <li>📷 攝影</li>
+    </ul>
+
+    <h2 class="section-title">我想說的話</h2>
+    <blockquote>每天進步一點點，就是成功的開始。</blockquote>
+  </main>
+</body>
+</html>
